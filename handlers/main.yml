@@ -1,0 +1,6 @@
+---
+- name: reload dropbear
+  raw: /etc/init.d/dropbear reload
+
+- name: uci commit dropbear
+  uci: command=commit config=dropbear

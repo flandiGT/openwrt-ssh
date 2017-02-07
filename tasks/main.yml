@@ -1,0 +1,15 @@
+---
+- name: set dropbear config
+  include: set_dropbear_uci_values.yml
+  with_dict:
+    Port: '{{port}}'
+    PasswordAuth: '{{password_auth | int}}'
+    RootPasswordAuth: '{{root_password_auth | int}}'
+
+- name: set authorized_keys
+  template:
+    src: authorized_keys.j2
+    dest: /etc/dropbear/authorized_keys
+#  notify:
+#    - uci commit dropbear
+#    - reload dropbear

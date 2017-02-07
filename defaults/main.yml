@@ -1,0 +1,5 @@
+---
+port: 22
+password_auth: True
+root_password_auth: True
+authorized_keys: []
