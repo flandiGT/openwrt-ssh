@@ -9,7 +9,10 @@ Role Variables
 
 | variable name     | type                   | default                      |
 |-------------------|------------------------|------------------------------|
-| authorized_keys   | array of strings       | Array of ssh authorized keys |
+| port              | port as number         | 22                           |
+| password_auth     | boolean                | True                         |
+| root_password_auth | boolean               | True                         |
+| authorized_keys    | array of strings      | Array of ssh authorized keys |
 
 Dependencies
 ------------
@@ -21,7 +24,10 @@ Example Playbook
 
 ```
 - role: openwrt-ssh
-  authorized_keys: [
-    'ssh-rsa AsLni1gBzlYKyjM0Ho...4bXURWWQoZAAyic9diM user@computer'
-  ]
+  port: 22
+  password_auth: True
+  root_password_auth: True
+  authorized_keys:
+    - 'ssh-rsa AsLni1gBzlYKyjM0Ho...4bXURWWQoZAAyic9diM user@computer'
+
 ```
