@@ -6,9 +6,9 @@
     type: dropbear
     index: 0
     values:
-      Port: '{{port}}'
-      PasswordAuth: '{{password_auth | int}}'
-      RootPasswordAuth: '{{root_password_auth | int}}'
+      Port: '{{ port }}'
+      PasswordAuth: '{{ password_auth | int }}'
+      RootPasswordAuth: '{{ root_password_auth | int }}'
   notify:
     - uci commit dropbear
     - reload dropbear
